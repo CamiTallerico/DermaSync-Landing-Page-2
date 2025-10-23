@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DermaSync – Precision Dermatology, Seamlessly Integrated</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Product+Sans:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Google Sans', 'Product Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: #111827;
+            background: #f9fafb;
+            line-height: 1.6;
+            min-width: 320px;
+        }
+        img { max-width: 100%; display: block; }
+        a { color: inherit; text-decoration: none; }
+        button, input, textarea {
+            font: inherit;
+            border: none;
+            background: none;
+        }
+        button { cursor: pointer; }
+
+
+        /* ========== UTILITIES ========== */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all .25s ease;
+        }
+        .btn-primary {
+            background: #2952d9;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #1e3eb0;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 2px solid #2952d9;
+            color: #2952d9;
+        }
+        .btn-outline:hover {
+            background: #2952d9;
+            color: #fff;
+        }
+
+
+        /* ========== TOP NAV ========== */
+        .top-nav {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .top-nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #2952d9;
+            font-family: 'Google Sans', 'Product Sans', 'Inter', sans-serif;
+        }
+        .logo img {
+            width: 32px;
+            height: 32px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4b5563;
+            transition: color .2s ease;
+        }
+        .nav-links a:hover {
+            color: #2952d9;
+        }
+
+
+        /* ========== HERO ========== */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 4rem 0 3rem;
+        }
+        .hero__text h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        .hero__subtitle {
+            font-size: 1.125rem;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        .hero__text p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .hero__image img {
+            border-radius: 8px;
+        }
+
+
+        /* ========== HOW IT WORKS ========== */
+        .how-it-works {
+            padding: 3rem 0;
+            background: #fff;
+        }
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .steps {
+            display: grid;
+            gap: 2rem;
+        }
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .step i {
+            font-size: 2.5rem;
+            color: #2952d9;
+            margin-bottom: 1rem;
+        }
+        .step h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        .step p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+
+        /* ========== SERVICES ========== */
+        .services {
+            padding: 3rem 0;
+        }
+        .services h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .service-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.75rem 1.5rem;
+            text-align: center;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,.05);
+        }
+        .service-card i {
+            font-size: 2.25rem;
+            color: #2952d9;
+            margin-bottom: 1rem;
+        }
+        .service-card h3 {
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+        }
+        .service-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+
+        /* ========== CASES ========== */
+        .cases {
+            padding: 3rem 0;
+            background: #fff;
+        }
+        .cases h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .case-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .case-card {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .case-card img {
+            border-radius: 6px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .case-card h3 {
+            font-size: 1.125rem;
+        }
+        .case-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            flex: 1 1 auto;
+        }
+        .case-metrics {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.75rem;
+        }
+        .metric {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        .metric strong {
+            display: block;
+            color: #111827;
+            font-size: 1.25rem;
+        }
+
+
+        /* ========== FAQ ========== */
+        .faq {
+            padding: 3rem 0;
+        }
+        .faq h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .faq-item {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1rem 1.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+        .faq-question:hover {
+            background: #f3f4f6;
+        }
+        .faq-question i {
+            transition: transform .2s ease;
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease, padding .3s ease;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1rem;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+
+        /* ========== SIGN IN ========== */
+        .sign-in {
+            padding: 3rem 0;
+            background: #fff;
+        }
+        .sign-in h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .sign-in-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+        }
+
+
+        /* ========== CONTACT ========== */
+        .contact {
+            padding: 3rem 0;
+        }
+        .contact h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .contact-form {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 2rem 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: border-color .2s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2952d9;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #111827;
+            color: #e5e7eb;
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+        }
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        .footer-social a {
+            font-size: 1.25rem;
+            transition: color .2s ease;
+        }
+        .footer-social a:hover {
+            color: #fff;
+        }
+        footer p {
+            font-size: 0.875rem;
+        }
+
+
+        /* ========== RESPONSIVE ≥ 768px ========== */
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                align-items: center;
+                gap: 3rem;
+                padding: 5rem 0;
+            }
+            .hero__text {
+                flex: 1 1 50%;
+            }
+            .hero__image {
+                flex: 1 1 50%;
+            }
+            .hero__text h1 {
+                font-size: 2.5rem;
+            }
+
+
+            .steps,
+            .service-grid,
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        /* ========== RESPONSIVE ≥ 1024px ========== */
+        @media (min-width: 1024px) {
+            .steps,
+            .service-grid,
+            .case-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .hero__text h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+  </head>
+
+
+  <body>
+
+
+    <!-- TOP NAV -->
+    <nav class="top-nav">
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="https://placehold.co/32x32/2952d9/ffffff?text=DS" alt="DermaSync Logo">
+          DermaSync
+        </a>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#faq">FAQ</a>
+          <a href="#sign-in">Dermatologist Portal Sign In</a>
+          <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Book Demo</a>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__text">
+        <h1>Precision Dermatology, Seamlessly Integrated</h1>
+        <p class="hero__subtitle">We provide virtual dermatology consultations with licensed professionals and patients, all in one place.</p>
+        <p>DermaSync empowers clinics and labs with AI-driven dermatology workflows that improve diagnostic accuracy, reduce time-to-insight, and elevate patient trust.</p>
+        <div class="hero__actions">
+          <a href="#contact" class="btn btn-primary">Request a Demo</a>
+          <a href="#services" class="btn btn-outline">Explore Services</a>
+        </div>
+      </div>
+      <div class="container hero__image">
+        <img src="https://placehold.co/600x400/2952d9/ffffff?text=AI+Dermatology+Platform" alt="DermaSync Platform">
+      </div>
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <i class="fa-solid fa-upload"></i>
+            <h3>1. Upload Images</h3>
+            <p>Clinicians securely upload dermoscopic or clinical images to our encrypted cloud.</p>
+          </div>
+          <div class="step">
+            <i class="fa-solid fa-brain"></i>
+            <h3>2. AI Analysis</h3>
+            <p>Our FDA-cleared algorithms detect malignancy risk and generate structured reports.</p>
+          </div>
+          <div class="step">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h3>3. Expert Review</h3>
+            <p>Board-certified dermatologists validate results and recommend next steps within hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SERVICES -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Our Core Services</h2>
+        <div class="service-grid">
+          <div class="service-card">
+            <i class="fa-solid fa-microscope"></i>
+            <h3>AI Pathology Analysis</h3>
+            <p>Automated dermascopic and histopathological image evaluation with expert-level accuracy.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Regulatory Compliance Suite</h3>
+            <p>End-to-end GDPR, HIPAA and ISO 13485 tooling built into every workflow.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-arrow-trend-up"></i>
+            <h3>Clinic Growth Analytics</h3>
+            <p>Real-time dashboards that track patient outcomes, revenue cycles and referral trends.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>Secure Cloud Integration</h3>
+            <p>One-click connectors for Epic, Cerner and all major PACS/VNA systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- CASES -->
+    <section id="cases" class="cases">
+      <div class="container">
+        <h2>Client Success Stories</h2>
+        <div class="case-grid">
+          <div class="case-card">
+            <img src="https://placehold.co/400x220/10b981/ffffff?text=38%25+Faster+Results" alt="38% Faster Results">
+            <h3>DermaCenter Berlin</h3>
+            <p>Reduced average biopsy review time by 38% while improving malignancy detection sensitivity.</p>
+            <div class="case-metrics">
+              <div class="metric"><strong>38%</strong> Faster</div>
+              <div class="metric"><strong>12%</strong> Higher Accuracy</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <img src="https://placehold.co/400x220/10b981/ffffff?text=3x+Volume+Growth" alt="3x Volume Growth">
+            <h3>SkinScan Nordic</h3>
+            <p>Scaled teledermatology consultations across 3 countries without adding headcount.</p>
+            <div class="case-metrics">
+              <div class="metric"><strong>3×</strong> Volume</div>
+              <div class="metric"><strong>0</strong> New Hires</div>
+            </div>
+          </div>
+          <div class="case-card">
+            <img src="https://placehold.co/400x220/10b981/ffffff?text=27%25+Cost+Saved" alt="27% Cost Saved">
+            <h3>MetroPath Labs</h3>
+            <p>Automated report generation cut administrative labor costs by 27% annually.</p>
+            <div class="case-metrics">
+              <div class="metric"><strong>27%</strong> Cost Saved</div>
+              <div class="metric"><strong>4 hrs</strong> /Day Freed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is DermaSync FDA cleared?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Yes. Our AI modules are FDA 510(k) cleared and CE marked for use in clinical decision support.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How long does implementation take?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Most clinics are fully onboarded within 10 business days, including EMR integration and staff training.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is your uptime SLA?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              We guarantee 99.9% uptime with 24/7 monitoring and redundant infrastructure across two continents.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SIGN IN -->
+    <section id="sign-in" class="sign-in">
+      <div class="container">
+        <h2>Dermatologist Portal Sign In</h2>
+        <form class="sign-in-form" action="https://formspree.io/f/xnngkggj" method="POST">
+          <div class="form-group">
+            <label for="license">License Number *</label>
+            <input type="text" id="license" name="license" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+          <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+            New user? <a href="#contact" style="color: #2952d9;">Request access here</a>.
+          </p>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <form class="contact-form" action="https://formspree.io/f/xnngkggj" method="POST">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-social">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="mailto:info@dermasync.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>© <span id="year"></span> DermaSync. All rights reserved.</p>
+      </div>
+    </footer>
+
+
+    <script>
+        // Dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+  </body>
+
+
+</html>
